@@ -1,0 +1,72 @@
+@font-face {
+    font-family: 'KCCChassam';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/KCCChassam.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+body{
+    background: url("새벽녘.jpg") no-repeat center;
+}
+.page{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.system{
+    position: relative;
+    left: 45px;
+    bottom: 70px;
+    font-size: 40px;
+    font-weight: 700;
+    color: #312c2c;
+    font-family: 'KCCChassam';
+}
+
+.titleWrap{
+    position: relative;
+    left: 30px;
+    bottom: 20px;
+}
+
+.inputWrap{
+    width: 400px; position: relative;
+    margin-top: 20px;
+}
+
+.inputWrap:first-child {margin-top: 0;}
+.inputWrap input{
+    width: 100%;
+    padding: 20px 10px 10px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #111;
+    font-size: 18px; color: #111;
+    outline: none;
+}
+
+/* .inputWrap input:focus + label,
+.inputWrap input:vaild + label{
+    top: -2px; 
+    font-size: 13px; color:royalblue;
+} */
+
+.btn {
+    margin-top: 30px;
+}
+.btn button{
+    width: 104%; height: 50px;
+    background-color: rgb(147, 78, 211);
+    color: #fff;
+    font-size: 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.btn button:disabled{
+    background-color: #b4e2b8;
+    color: white;
+}
+
