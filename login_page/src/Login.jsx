@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, { useEffect } from 'react'
 import img from "./jnu_logo.png";
 
@@ -11,7 +12,7 @@ export default function Login(){
     const [password, setPassword] = React.useState('');
     const [usernameVaild, setusernameValid] = React.useState(false);
     const [passwordVaild, setpasswordVaild] = React.useState(false);
-    const [notallow, setNotallow] = React.useState(true);
+    const [notallow, setNotallow] = React.useState(true);        
 
     useEffect(() => {
         if(usernameVaild && passwordVaild){
@@ -41,14 +42,34 @@ export default function Login(){
         }
     }
     
-    const onClickConfirmButton =()=>{
-        if(username===User.email && password===User.pw){
-            console.log("로그인에 성공했습니다.");
-        }else{
-            alert("등록되지 않았으므로 전남대에 문의하세요.");
-        }
+    // const onClickConfirmButton =()=>{
+    //     if(username===User.email && password===User.pw){
+    //         console.log("로그인에 성공했습니다.");
+    //     }else{
+    //         alert("등록되지 않았으므로 전남대에 문의하세요.");
+    //     }
+    // }
 
-    }
+    const onClickConfirmButton = () => {
+        axios.post('/api/user_inform',null , {
+          'user_ID': username,
+          'user_pw': password
+        }).then(response => {
+          const data = response.data;
+          if (data.result === true) {
+            alert('로그인 되었습니다!');
+            // 로그인 성공 시 처리
+          } else {
+            console.log(response.data);
+            alert('아이디 또는 비밀번호가 일치하지 않습니다!');
+            // 로그인 실패 시 처리
+          }
+        }).catch(error => {
+          console.error(error);
+          alert('로그인에 실패하였습니다.');
+        });
+      }
+
 
     return(
         <div className='page'>
@@ -81,3 +102,4 @@ export default function Login(){
         </div>
     )
 }
+

@@ -2,8 +2,10 @@ const express = require("express"); // npm i express | yarn add express
 const cors  = require("cors");    // npm i cors | yarn add cors
 const mysql = require("mysql");   // npm i mysql | yarn add mysql
 const app  = express();
-const http = require('http');
+const util = require('util');
 const PORT = 3001; // 포트번호 설정
+const router = express.Router();
+const bcrypt = require('bcrypt');
 
 const db = mysql.createPool({
     host: "127.0.0.1",
@@ -17,33 +19,42 @@ app.use(cors({
     credentials: true,          // 응답 헤더에 Access-Control-Allow-Credentials 추가
     optionsSuccessStatus: 200,  // 응답 상태 200으로 설정
 }))
-
+// app.use(express.json());
 app.use(express.urlencoded({ extended: true })) 
 
-app.listen(PORT, () => {
-    console.log(`server running on port ${PORT}`);
-});
-
-
-//값을 넣어줌
-app.get("", (req, res) => {
+app.get("/api/user_inform", (req, res) => {
     res.header("Access-Control-Allow-Origin", "*");
-    
     const sqlQuery = "SELECT * FROM id_pw.user;"
-
     db.query(sqlQuery, (err, result) => {
         res.send(result);
         console.log(result);
     });
 });
 
+app.post('/api/user_inform', (req, res) => {
+    const user_ID = req.body.user_ID;
+    const user_pw = req.body.user_pw;
+  
+    const query = `SELECT COUNT(*) AS count FROM id_pw.user WHERE user_ID = ? AND user_pw = ?`;
+  
+    db.query(query, [user_ID, user_pw], (error, results) => {
+      if (error) throw error;
+  
+      const count = results[0].count;
+      const result = (count === 1);
+  
+      res.send({
+        result: result
+      });
+    });
+  });
 
 
-// const express = require('express');
-// const app = express();
-// const user_inform = require('./routes/user_inform');
- 
-// app.use('/user_inform', user_inform);
- 
-// const port = 3001;
-// app.listen(port, () => console.log(`Node.js Server is running on port ${port}...`));
+
+
+app.listen(PORT, () => {
+    console.log(`server running on port ${PORT}`);
+});
+
+
+
