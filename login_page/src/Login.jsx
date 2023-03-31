@@ -51,9 +51,9 @@ export default function Login(){
     // }
 
     const onClickConfirmButton = () => {
-        axios.post('/api/user_inform',null , {
-          'user_ID': username,
-          'user_pw': password
+        axios.post('/api/user_inform', {
+            'user_ID': username,
+            'user_pw': password
         }).then(response => {
           const data = response.data;
           if (data.result === true) {

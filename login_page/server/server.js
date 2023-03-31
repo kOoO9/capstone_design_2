@@ -4,8 +4,6 @@ const mysql = require("mysql");   // npm i mysql | yarn add mysql
 const app  = express();
 const util = require('util');
 const PORT = 3001; // 포트번호 설정
-const router = express.Router();
-const bcrypt = require('bcrypt');
 
 const db = mysql.createPool({
     host: "127.0.0.1",
@@ -19,7 +17,8 @@ app.use(cors({
     credentials: true,          // 응답 헤더에 Access-Control-Allow-Credentials 추가
     optionsSuccessStatus: 200,  // 응답 상태 200으로 설정
 }))
-// app.use(express.json());
+
+app.use(express.json());
 app.use(express.urlencoded({ extended: true })) 
 
 app.get("/api/user_inform", (req, res) => {
@@ -38,8 +37,10 @@ app.post('/api/user_inform', (req, res) => {
     const query = `SELECT COUNT(*) AS count FROM id_pw.user WHERE user_ID = ? AND user_pw = ?`;
   
     db.query(query, [user_ID, user_pw], (error, results) => {
-      if (error) throw error;
-  
+      if (error) {
+        console.log(error);
+      }
+      
       const count = results[0].count;
       const result = (count === 1);
   
