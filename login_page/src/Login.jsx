@@ -52,7 +52,9 @@ export default function Login(){
           const data = response.data;
           if (data.result === true) {
             alert('로그인 되었습니다!');
-            console.log(response.data);
+            sessionStorage.setItem('user_ID', username);
+            const storedUsername = sessionStorage.getItem('user_ID');
+            console.log("로그인 아이디 : ", storedUsername); // 출력 결과: "my_username"
             navigate('/Dashboard');
             // 로그인 성공 시 처리
           } else {
