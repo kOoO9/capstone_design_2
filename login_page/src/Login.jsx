@@ -1,11 +1,12 @@
 import axios from 'axios';
 import React, { useEffect } from 'react'
 import img from "./jnu_logo.png";
+import { useNavigate } from 'react-router-dom';
 
-const User = {
-    email: 'hayeong',
-    pw: '1234'
-  }
+// const User = {
+//     email: 'hayeong',
+//     pw: '1234'
+//   }
 
 export default function Login(){
     const [username, setUsername] = React.useState('');
@@ -13,6 +14,7 @@ export default function Login(){
     const [usernameVaild, setusernameValid] = React.useState(false);
     const [passwordVaild, setpasswordVaild] = React.useState(false);
     const [notallow, setNotallow] = React.useState(true);        
+    const navigate = useNavigate();
 
     useEffect(() => {
         if(usernameVaild && passwordVaild){
@@ -42,14 +44,6 @@ export default function Login(){
         }
     }
     
-    // const onClickConfirmButton =()=>{
-    //     if(username===User.email && password===User.pw){
-    //         console.log("로그인에 성공했습니다.");
-    //     }else{
-    //         alert("등록되지 않았으므로 전남대에 문의하세요.");
-    //     }
-    // }
-
     const onClickConfirmButton = () => {
         axios.post('/api/user_inform', {
             'user_ID': username,
@@ -58,6 +52,8 @@ export default function Login(){
           const data = response.data;
           if (data.result === true) {
             alert('로그인 되었습니다!');
+            console.log(response.data);
+            navigate('/Dashboard');
             // 로그인 성공 시 처리
           } else {
             console.log(response.data);
