@@ -1,22 +1,29 @@
 {
-  "proxy": "http://localhost:3001",
-  "name": "login_page",
+  "name": "test-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@tensorflow/tfjs": "^4.4.0",
+    "@tensorflow/tfjs-backend-webgl": "^4.4.0",
+    "@tensorflow/tfjs-converter": "^4.4.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.3.4",
-    "bcrypt": "^5.1.0",
+    "child_process": "^1.0.2",
     "cors": "^2.8.5",
     "express": "^4.18.2",
-    "http": "^0.0.1-security",
     "http-proxy-middleware": "^2.0.6",
     "mysql": "^2.18.1",
-    "react-router-dom": "^6.10.0",
+    "nodemon": "^2.0.22",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-native-linear-gradient": "^2.6.2",
+    "react-router-dom": "^6.9.0",
     "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "bcrypt": "^5.1.0",
+    "http": "^0.0.1-security"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -41,6 +48,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "browser": {
+    "child_process": false
   },
   "devDependencies": {
     "@babel/core": "^7.21.3",

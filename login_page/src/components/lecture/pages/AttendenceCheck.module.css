@@ -1,0 +1,42 @@
+li{
+    list-style-type: none;
+}
+
+td{
+    margin: auto;
+    text-align: center;
+}
+
+.AttendenceCheckTable, th, td {
+    border: 1px solid #bcbcbc;
+    border-radius: 5px 5px 5px 5px;
+  }
+
+.AttendenceCamBox {
+    width: 850px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.attendenceTd {
+    vertical-align : top;
+}
+
+.ipCamTd {
+    margin: auto;
+} 
+
+.startCam {
+    border: none;
+}
+
+.modifyBtn {
+    margin-top: 10px;
+}
+
+
+.pMargin {
+    margin-top: 0px; margin-bottom: 0px;
+}

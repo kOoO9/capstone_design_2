@@ -1,37 +1,37 @@
-import Login from './Login';
-import axios from 'axios'; 
-import React, {useEffect }  from 'react';
-import { BrowserRouter, Routes, Route, Switch } from 'react-router-dom';
-import Dashboard from './Dashboard';
+import React, { useEffect } from 'react';
+import { Route, BrowserRouter, Routes, Switch, Link } from 'react-router-dom';
+import axios from 'axios';
+
+import LectureList from './components/lecture/pages/LectureList';
+import AttendenceCheck from './components/lecture/pages/AttendenceCheck';
+import ModifyAttendence from './components/lecture/pages/ModifyAttendence.js'
+import Live from './components/lecture/live/Live.js'
+import Login from './LoginPage.js'
+// import Dashboard from './components/lectures/pages/Dashboard';
 
 function App() {
-  const [IsLogin, setIsLogin] = React.useState(false);
+  // useEffect(() => {
+  //   axios.get('/api/test')
+  //     .then(res => console.log(res))
+  // })
 
-  useEffect(() => {
-    axios.get('/api/user_inform')
-      .then(res => console.log(res))
-      .catch(err => console.log(err))
-
-    if(sessionStorage.getItem('user_ID')==null){
-      console.log('isLogin 값이 어떻게 되어있는가', IsLogin); //저장된 값이 없다면
-    }else{
-      setIsLogin(true);
-      console.log('isLogin 값이 어떻게 되어있는가', IsLogin);//저장된 값이 있다면
-    }
-  }, [])
 
   return (
-    <>
+    <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Login />} />
-          <Route path="/dashboard" element={<Dashboard IsLogin={IsLogin} />} />
+          <Route exact path="/" element={<Login />} />
+          {/* <Route path="/dashboard" element={<Dashboard IsLogin={IsLogin} />} /> */}
+          <Route exact path='/lectures' element={<LectureList />}></Route>
+          <Route path='/:id' element={<AttendenceCheck />}></Route>
+          <Route path='/:id/edit' element={<ModifyAttendence />}></Route>
+          {/* <Route exact path='/' element={<Live />}></Route> */}
         </Routes>
       </BrowserRouter>
-
-      {/* {IsLogin ? 
-        <Main IsLogin={IsLogin} /> : 
-        <Login />} */}
-    </>
+    </div>
   );
-}export default App;
+}
+
+
+
+export default App;
