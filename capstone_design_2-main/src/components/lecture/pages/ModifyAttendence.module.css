@@ -1,0 +1,80 @@
+@import url(https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@2.0/nanumsquare.css);
+
+
+li{
+    list-style-type: none;
+}
+
+td{
+    margin: auto;
+    text-align: center;
+}
+
+.lectureName {
+    text-align: left;    /* line-height: 1.5; */
+    color: black;
+    font: optional;
+    font-family: 'KCCChassam';
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.AttendenceCheckTable {
+    border-collapse: collapse;
+
+    font-family: 'NanumSquare';
+}
+
+.AttendenceCheckTable th {
+    border-collapse: collapse;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+    font-family: 'NanumSquare';
+}
+
+.AttendenceCheckTable td {
+    border-collapse: collapse;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+    font-family: 'NanumSquare';
+}
+
+.classCols {
+    border-left: 0;
+
+}
+
+.btnCols {
+    border-right: 0;
+    margin-top: 0px; margin-bottom: 0px;
+
+}
+
+
+.AttendenceCamBox {
+    width: 850px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.attendenceTd {
+    vertical-align : top;
+}
+
+.ipCamTd {
+    margin: auto;
+} 
+
+.startCam {
+    border: none;
+}
+
+.modifyBtn {
+    margin-top: 10px;
+}
+
+
+.pMargin {
+}

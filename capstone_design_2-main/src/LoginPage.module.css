@@ -1,0 +1,104 @@
+@font-face {
+    font-family: 'KCCChassam';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/KCCChassam.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+tr {
+    width: 400px;
+}
+
+
+
+body{
+    /* background: url("새벽녘.jpg") no-repeat center; */
+    background-color: rgb(236, 236, 236);
+}
+
+.box{
+    /* 상하좌우 정중앙 정렬하기 */
+    /* position: absolute; */
+    margin-left: auto; 
+    margin-right: auto;
+    margin-top: 100px;
+    /* margin-bottom: auto; */
+    border: 0px;
+}
+
+.page{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.system{
+    /* position: relative; */
+    text-align: center;
+    /* left: 45px;
+    bottom: 70px; */
+    font-size: 40px;
+    font-weight: 700;
+    color: #312c2c;
+    font-family: 'KCCChassam';
+}
+
+.titleWrap{
+    /* position: relative; */
+    /* width: 400px; */
+    margin: 30px 0px;
+    /* table-layout: fixed; */
+    /* left: 30px;
+    bottom: 20px; */
+}
+
+.inputWrap{
+    position: relative;
+    /* margin-top: 20px; */
+    margin: 0 auto;
+}
+
+.inputWrap:first-child {margin-top: 0;}
+.inputWrap input{
+    width: 380px; 
+    /* width: 100%; */
+    padding: 20px 10px 10px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #111;
+    font-size: 18px; color: #111;
+    outline: none;
+}
+
+/* .inputWrap input:focus + label,
+.inputWrap input:vaild + label{
+    top: -2px; 
+    font-size: 13px; color:royalblue;
+} */
+
+.btn {
+    margin: 30px auto 0px auto;
+    
+}
+.btn button{
+    width: 100%; height: 50px;
+    background-color: rgb(147, 78, 211);
+    color: #fff;
+    font-size: 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.btn button:disabled{
+    background-color: #b4e2b8;
+    color: white;
+}
+
+.copyright {
+    margin-top: 60px;
+    font-size: 10px;
+    color: rgb(180,180,180);
+    text-align: center;
+}

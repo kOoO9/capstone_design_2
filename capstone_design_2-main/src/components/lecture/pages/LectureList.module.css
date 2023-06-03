@@ -1,0 +1,84 @@
+@import url(https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@2.0/nanumsquare.css);
+@font-face {
+    font-family: 'KCCChassam';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/KCCChassam.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+.list-wrapper {
+    padding: 100px 80px;
+}
+
+.icon {
+    width: 160px;
+    height: 100px;
+    background-size: cover;
+    /* background-image: url('../../../static/folder.png'); */
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5));
+}
+
+.link {
+    color: black;
+    padding: 110px 0;
+}
+
+.LecturesBox {
+    margin-top: 20px;
+}
+
+.LecturesTable {
+    border-collapse: collapse;
+    margin: 0 auto;
+    position: relative;
+    margin-top: 30px;
+}
+
+.LecturesTable tr {
+    border-collapse: collapse;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+    
+}
+
+.LecturesTable tr:hover {
+    background-color: rgb(250, 250, 250);
+    /* cursor: pointer; */
+}
+
+.LecturesTable td {
+    font-family: 'NanumSquare';
+    padding: 5px;
+    /* text-align: right; */
+}
+
+.classCols {
+    border-left: 0;
+}
+
+.btnCols {
+    border-right: 0;
+}
+
+
+.ListTitle {
+    text-align: center;
+    /* line-height: 1.5; */
+    color: black;
+    font: optional;
+    font-family: 'KCCChassam';
+    font-size: 30px;
+    font-weight: 700;
+  }
+
+
+.listTableIndex {
+    height: 20px;
+}
+
+button {
+    font-family: 'NanumSquare';
+
+    cursor: pointer;
+}
