@@ -68,7 +68,7 @@ function LoginPage() {
           }).then(response => {
             const data = response.data;
             if (data.result === true) {
-              alert('로그인 되었습니다!');
+              // alert('로그인 되었습니다!');
               sessionStorage.setItem('user_ID', username);
               const storedUsername = sessionStorage.getItem('user_ID');
               console.log("로그인 아이디 : ", storedUsername); // 출력 결과: "my_username"
@@ -120,14 +120,9 @@ function LoginPage() {
               {/* </Link> */}
               </div>
             </tr>
-            <tr>
-              <p className={styles.copyright}>Developed by 빠지지말아조 | hayeong koo,chaewon kim</p>
-            </tr>
         </table>
-
-
-
-          </div>
+            <p className={styles.copyright}>Developed by 빠지지말아조 | hayeong koo, chaewon kim</p>
+        </div>
       )
   }
 

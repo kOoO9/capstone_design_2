@@ -59,25 +59,34 @@ const ModifyAttendence = () => {
                       <th colSpan={2} className={styles.lectureName}>
                           <p>{fetchedDatas.lecture_name}</p>
                       </th>
-                        )) : ''}
+                        ))[0] : ''}
+        {/* {fetchedData ? fetchedData.map((fetchedDatas)=>(
+                    <th colSpan={2} className={styles.lectureName}>
+                        <p>{fetchedDatas.lecture_name}</p>
+                    </th>
+                    ))[0] : ''} */}
             <tr height='400'>
 
                 <td className={styles.attendenceTd}>
                     <table className={styles.AttendenceCheckTable}>
                         <tr height='40'>
-                            <th width='150' align="center">학생명</th>
-                            <th width='70' align="center">출석여부</th>
+                              <th width='70' align='center'>학번</th>
+                              <th width='70' align="center">학생명</th>
+                              <th width='70' align="center">출석여부</th>
                         </tr>
                         {Object.values(fetchedData) ? Object.values(fetchedData).map((fetchedDatas)=>(
                             
                             <tr id={fetchedDatas.student_id} height='30px'>
+                                <td className={styles.classCols}>
+                                        <li>{fetchedDatas.student_id}</li>
+                                </td>
                                 <td className={styles.classCols}>
                                         <li>{fetchedDatas.student_name}</li>
                                 </td>
                                 <td className={styles.btnCols}>
                                     {/* <p>{inputDatas[`attendence${_mm_dd}`]}</p> */}
                                     {/* <select onChange={handleInputChange} name={`${itemData[0].student_id}`} value={itemData[0].attendence_04_12 || ''}>{options}</select> */}
-                                    <select onChange={handleInputChange} name={fetchedDatas.student_name}>
+                                    <select onChange={handleInputChange} name={fetchedDatas.student_name} style={{border: 0, color: (236, 236, 236)}} >
                                       <option value=""></option>
                                       <option value="출석">출석</option>
                                       <option value="결석">결석</option>
@@ -98,16 +107,20 @@ const ModifyAttendence = () => {
                     
                 </td> */}
             </tr>
-        </table>
-
-        <div className={styles.modifyBtn}>
+            <tr className={styles.modifyBtn}>
             {Object.values(fetchedData) ? Object.values(fetchedData).map((fetchedDatas)=>(
                 <Link to={`/${fetchedDatas.lecture_code}`}>
                     <button onClick={handleDataUpdate}>저장</button>
                     <button>취소</button>
                 </Link>
             ))[0] : ''}
-        </div>
+        
+
+            </tr>
+            {/* <p className={styles.copyright}>Developed by 빠지지말아조 | hayeong koo, chaewon kim</p> */}
+        </table>
+
+
 
     </div>
 

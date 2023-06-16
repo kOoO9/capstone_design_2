@@ -126,12 +126,16 @@ function StudentList(){
                             <td className={styles.attendenceTd}>
                                 <table className={styles.AttendenceCheckTable}>
                                     <tr height='40px'>
-                                        <th width='150' align="center">학생명</th>
+                                        <th width='70' align='center'>학번</th>
+                                        <th width='70' align="center">학생명</th>
                                         <th width='70' align="center">출석여부</th>
                                     </tr>
                                     
                                     {inputData ? inputData.map((inputDatas)=>(                 
                                         <tr id={inputDatas.student_id} height='30px'>
+                                            <td className={styles.classCols}>
+                                                <li>{inputDatas.student_id}</li>
+                                            </td>
                                             <td className={styles.classCols}>
                                                     <li>{inputDatas.student_name}</li>
                                             </td>
@@ -171,17 +175,27 @@ function StudentList(){
                             </td>
 
                         </tr> 
-                </table>
-
                 
-                <div className={styles.modifyBtn}>
-                    {inputData ? inputData.map((inputDatas)=>(
 
-                        <Link to={`/${inputDatas.lecture_code}/edit`}>
-                            <button>수정</button>
-                        </Link>
-                    ))[0] : ''}
-                </div>
+                <tr>
+                    <span className={styles.modifyBtn}>
+                        {inputData ? inputData.map((inputDatas)=>(
+
+                            <Link to={`/${inputDatas.lecture_code}/edit`}>
+                                <button>수정</button>
+                            </Link>
+                        ))[0] : ''}
+                    </span>
+                    <span className={styles.modifyBtn}>
+                        {inputData ? inputData.map((inputDatas)=>(
+                            <Link to={`/${inputDatas.professors_id}/lectures`}>
+                                <button>목록</button>
+                            </Link>
+                            ))[0] : ''}
+                    </span>
+                </tr>
+                </table>
+                {/* <p className={styles.copyright}>Developed by 빠지지말아조 | hayeong koo, chaewon kim</p> */}
         </div>
       
     );

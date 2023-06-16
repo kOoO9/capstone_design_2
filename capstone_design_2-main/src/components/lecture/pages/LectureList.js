@@ -69,6 +69,7 @@ function LectureList(){
 
                 </table>
             </div>
+            <p className={styles.copyright}>Developed by 빠지지말아조 | hayeong koo, chaewon kim</p>
         </div>
         
     );

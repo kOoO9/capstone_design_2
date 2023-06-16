@@ -11,7 +11,8 @@ td{
 }
 
 .lectureName {
-    text-align: left;    /* line-height: 1.5; */
+    text-align: left;
+    /* line-height: 1.5; */
     color: black;
     font: optional;
     font-family: 'KCCChassam';
@@ -19,7 +20,15 @@ td{
     font-weight: 700;
 }
 
+.AttendenceCamTable {
+    position: inherit;
+    /* top: 500px; */
+    top: 80%;
+    left: 50%;
+}
+
 .AttendenceCheckTable {
+    width: 250px;
     border-collapse: collapse;
 
     font-family: 'NanumSquare';
@@ -46,17 +55,16 @@ td{
 
 .btnCols {
     border-right: 0;
-    margin-top: 0px; margin-bottom: 0px;
-
 }
 
 
 .AttendenceCamBox {
-    width: 850px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    width: 1000px;
+    height: 540px;
+    position: relative;
+    /* top: 50%;
+    left: 50%; */
+    transform: translate(-50%, -70%);
 }
 
 .attendenceTd {
@@ -65,7 +73,13 @@ td{
 
 .ipCamTd {
     margin: auto;
+    /* width: 500px; */
 } 
+.btn {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+}
 
 .startCam {
     border: none;
@@ -77,4 +91,21 @@ td{
 
 
 .pMargin {
+    margin-top: 0px; margin-bottom: 0px;
+}
+
+/* .content {
+    scale: 100%;
+} */
+
+.copyright {
+    position: fixed;
+    bottom: 40px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 12px;
+    color: rgb(150,150,150);
+    text-align: center;
+    margin: 0 auto;
+    font-family: 'NanumSquare';
 }
